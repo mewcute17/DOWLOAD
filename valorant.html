@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>RR Valorant Banner</title>
+</head>
+
+<body translate="no" style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;">
+
+  <!-- Container with rounded corners -->
+  <div id="container"
+       style="width: 90%; height: 90%; border-radius: 25px; overflow: hidden; position: relative;
+              background-image: url('https://cdn.discordapp.com/attachments/1263885013989200034/1295097501417738290/Killua_Hunter_X_Hunter_GIF_-_Killua_Hunter_X_Hunter_Killua_Lightning_-_Temukan__Bagikan_GIF.gif?ex=670d690a&is=670c178a&hm=466410228b59af34c733851e94b6a33909f6fe45b746ac362e1e1e8c1b46bc67&');
+              background-size: cover; background-position: center;">
+
+    <div id="output"
+         style="display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: monospace;
+                font-size: 50px;
+                color: white;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);"> 
+        <!-- Default text -->
+        Last Match: <span id="rr-text">-20RR</span>
+    </div>
+
+  </div>
+
+  <script>
+    // Parse the URL query string to get custom text
+    const urlParams = new URLSearchParams(window.location.search);
+    const customText = urlParams.get('text') || '-20RR'; // Fallback to '-20RR' if no text is provided
+
+    // Update the text in the output div
+    document.getElementById('rr-text').innerText = customText;
+  </script>
+
+</body>
+</html>
